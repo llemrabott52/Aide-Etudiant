@@ -1,0 +1,17 @@
+Install Simple Screen Recorder 0.3.8 in Ubuntu 16.04, 16.10
+To Install Simple Screen Recorder in Ubuntu:
+The new release has been made into its official PPA for Ubuntu 16.04, Ubuntu 16.10, Ubuntu 14.04, Ubuntu 12.04, and their derivatives.
+
+To install it, open terminal (Ctrl+Alt+T) and follow the steps below:
+
+1. Run command to add the PPA (type your password when it asks and hit Enter):
+$sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
+
+2. Update your system package index via command:
+$sudo apt update
+
+3. Finally install the recording software via command:
+$sudo apt install simplescreenrecorder simplescreenrecorder-lib
+
+To record 32-bit OpenGL applications on a 64-bit system, run:
+$sudo apt install simplescreenrecorder-lib:i386
