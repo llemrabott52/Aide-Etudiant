@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>TryHideShow</title>
+        <style>
+            #firstbuttoncss{
+                display: none;
+            }
+            #secondbuttoncss{
+                display: block;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function() {
+                $("#firstBlog").click(function() {
+                    $("#firstbuttoncss").slideToggle("normal");
+                });
+            });
+        </script>
+    </head>
+
+<body>  
+    <div id="firstBlog">
+        <button>FirstButton</button>
+    </div>
+    <div id="firstbuttoncss">
+        <span>Hello you are in the first blog content</span>
+    </div> 
+     
+    <div id="secondBlog">
+        <button>SecondButton</button>
+    </div>
+    <div id="secondbuttoncss">
+        <span>Hello you are in the second blog content</span>
+    </div>
+      
+      
+</body>
+
+</html>
