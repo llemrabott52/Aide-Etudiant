@@ -1,40 +1,55 @@
 <html>
-    <head>
-        <title>TryHideShow</title>
-        <style>
-            #firstbuttoncss{
-                display: none;
-            }
-            #secondbuttoncss{
-                display: block;
-            }
-        </style>
+  <head>
+    <title>TryHideShow</title>
+    <style>
+      .hidecontent {
+        display: none;
+      }
+    </style>
+  </head>
 
-        <script>
-            $(document).ready(function() {
-                $("#firstBlog").click(function() {
-                    $("#firstbuttoncss").slideToggle("normal");
-                });
-            });
-        </script>
-    </head>
+  <body>
+    <div>
+      <button id="firstButton">First Button</button>
+      <button id="secondButton">Second Button</button>
+      <button id="thirdButton">Third Button</button>
+    </div>
 
-<body>  
     <div id="firstBlog">
-        <button>FirstButton</button>
+      <span>1Blog content : <br /> Hello you are in the first blog content</span>
     </div>
-    <div id="firstbuttoncss">
-        <span>Hello you are in the first blog content</span>
-    </div> 
-     
-    <div id="secondBlog">
-        <button>SecondButton</button>
+    <div id="secondBlog" class="hidecontent">
+      <span>2Blog content : <br /> Hello you are in the second blog content</span>
     </div>
-    <div id="secondbuttoncss">
-        <span>Hello you are in the second blog content</span>
+    <div id="thirdBlog" class="hidecontent">
+      <span>3Blog content : <br /> Hello you are in the third blog content</span>
     </div>
-      
-      
-</body>
 
+    <script>
+      const firstButton = document.getElementById('firstButton');
+      const firstBlog = document.getElementById('firstBlog');
+      const secondButton = document.getElementById('secondButton');
+      const secondBlog = document.getElementById('secondBlog');
+      const thirdButton = document.getElementById('thirdButton');
+      const thirdBlog = document.getElementById('thirdBlog');
+
+      firstButton.addEventListener('click', () => {
+        firstBlog.classList.remove('hidecontent');
+        secondBlog.classList.add('hidecontent');
+        thirdBlog.classList.add('hidecontent');
+      });
+
+      secondButton.addEventListener('click', () => {
+        secondBlog.classList.remove('hidecontent');
+        firstBlog.classList.add('hidecontent');
+        thirdBlog.classList.add('hidecontent');
+      });
+
+      secondButton.addEventListener('click', () => {
+        thirdBlog.classList.remove('hidecontent');
+        firstBlog.classList.add('hidecontent');
+        secondBlog.classList.add('hidecontent');
+      });
+    </script>
+  </body>
 </html>
