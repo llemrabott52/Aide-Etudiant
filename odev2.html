@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Final Ödevi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<style>
+    body {
+        overflow: auto;
+    }
+    
+    .oklar {
+        float: right;
+    }
+    
+    .hidecontent {
+        display: none;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark fixed-top navbar-dark">
+        <a class="navbar-brand" href="index.html">LOGO</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#kapanacakGrp">
+    	<span class="navbar-toggler-icon"></span>
+  	</button>
+
+        <div id="kapanacakGrp" class="collapse navbar-collapse">
+            <ul class="navbar-nav mx-auto" id="menuLU">
+                <li class="nav-item"><a class="nav-link">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link">Galeri</a></li>
+                <li class="nav-item"><a class="nav-link">İletişim</a></li>
+            </ul>
+            <form class="form-inline my-2 my-md-0" action="#">
+                <input class="form-control mx-md-3" placeholder="Aramak için" type="text" required>
+                <button class="btn btn-success px-3 my-2 my-md-0" type="submit">Ara</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-12 text-center mb-5">
+                <p>Dizilimi değiştirmek için:</p>
+                <i id="firstButton" class="fas fa-list-alt" style="font-size:36px; padding-left: 10px;" onClick="first_fonction()"></i>
+                <i id="secondButton" class="fas fa-th-large" style="font-size:36px; padding-left: 10px;" onClick="second_fonction()"></i>
+                <i id="thirdButton" class="fas fa-th" style="font-size:36px; padding-left: 10px;" onClick="third_fonction()"></i>
+            </div>
+        </div>
+        <div class="hidecontent" class="row" id="yerlesimAlani">
+            <div class="col-md-3">
+                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
+                    <h2>1.Kutucuk</h2>
+                    <p>"Dünyada yüzbinlerce tuzak ve dane vardır. Biz ise, aç ve harîs kuşlar gibiyiz." (Mevlana, I/256.)</p>
+                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
+                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
+                    <h2>2.Kutucuk</h2>
+                    <p>Ne kadar bilirsen bil, söylediklerin karşındakinin anlayabildiği kadardır. (Mevlana)</p>
+                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
+                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
+                    <h2>3.Kutucuk</h2>
+                    <p>Bir mum diğer bir mumu tutuşturmakta ışığından bir şey kaybetmez. (Mevlana)</p>
+                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
+                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
+                    <h2>4.Kutucuk</h2>
+                    <p>Her şeye doğru demek ahmaklıktır, fakat her şeye yanlış demek de zorbalıktır.</p>
+                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
+                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
+                    <h2>5.Kutucuk</h2>
+                    <p>Hayatta muvaffak olmak için üç şey lazımdir: Dikkat, intizam, çalısma. (Mevlana)</p>
+                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
+                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
+                    <h2>6.Kutucuk</h2>
+                    <p>Cebi zengin fakat ruhu fakir olan insanın hali çok rezil ! Çünkü o; 'herşeyin fiyatını bilir, değerini değil.' (Mevlana)</p>
+                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
+                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
+                    <h2>7.Kutucuk</h2>
+                    <p>"Kula Bela Gelmez, Hak Yazmadıkça; Hak Bela Yazmaz, Kul Azmadıkça". (Mevlana)</p>
+                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
+                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
+                    <h2>8.Kutucuk</h2>
+                    <p>Bir kişi Allah'tan başka kimseye ihtiyacı olmadığına inanırsa; Allah da onu başkasına muhtaç etmez. (Mevlana)</p>
+                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
+                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
+                    <h2>9.Kutucuk</h2>
+                    <p>Doğrudan nasihat, kisiyi yaralar. (Mevlana)</p>
+                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
+                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //Sadece bu alanı kullanacaksınız.
+        const firstButton = document.getElementById('firstButton');
+        const firstBlog = document.getElementById('yerlesimAlani');
+        const secondButton = document.getElementById('secondButton');
+        const secondBlog = document.getElementById('yerlesimAlani');
+        const thirdButton = document.getElementById('thirdButton');
+        const thirdBlog = document.getElementById('yerlesimAlani');
+
+        first_fonction() = firstButton.addEventListener('click', () => {
+            firstBlog.classList.remove('hidecontent');
+            secondBlog.classList.add('hidecontent');
+            thirdBlog.classList.add('hidecontent');
+        });
+
+        second_fonction() = secondButton.addEventListener('click', () => {
+            secondBlog.classList.remove('hidecontent');
+            firstBlog.classList.add('hidecontent');
+            thirdBlog.classList.add('hidecontent');
+        });
+
+        third_fonction() = secondButton.addEventListener('click', () => {
+            thirdBlog.classList.remove('hidecontent');
+            firstBlog.classList.add('hidecontent');
+            secondBlog.classList.add('hidecontent');
+        });
+    </script>
+
+</body>
+
+</html>
