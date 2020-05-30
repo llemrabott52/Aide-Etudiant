@@ -34,7 +34,8 @@
         <div class="row">
             <div class="col-md-12 text-center mb-5">
 
-                <i id="firstIcon" class="fas fa-list-alt" style="font-size:36px; padding-left: 10px;"></i>
+                <i id="firstButton" class="fas fa-list-alt" style="font-size:36px; padding-left: 10px;"></i>
+                <i id="secondButton" class="fas fa-th-large" style="font-size:36px; padding-left: 10px;"></i>
 
             </div>
         </div>
@@ -116,96 +117,32 @@
         </div>
     </div>
 
-    <div class="container mt-5 pt-5">
-        <div class="row">
-            <div class="col-md-12 text-center mb-5">
+    <script>
+        const firstButton = document.getElementById('firstButton');
+        const secondButton = document.getElementById('secondButton');
+        const myBlog = document.getElementById('myBlog');
+        const items = Array.from(myBlog.children);
 
-                <i id="firstIcon" class="fas fa-list-alt" style="font-size:36px; padding-left: 10px;"></i>
+        for (const item of items) {
+            item.className = 'col-md-4'
+        }
 
-            </div>
-        </div>
-        <div id="myBlog" class="row">
-            <div class="col-md-11">
-                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
-                    <h2>1.Kutucuk</h2>
-                    <p>"Dünyada yüzbinlerce tuzak ve dane vardır. Biz ise, aç ve harîs kuşlar gibiyiz." (Mevlana, I/256.)</p>
-                    <i class="fas fa-chevron-circle-right oklar"></i>
-                    <i class="fas fa-chevron-circle-left oklar"></i>
-                </div>
-            </div>
-            <div class="col-md-11">
-                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
-                    <h2>2.Kutucuk</h2>
-                    <p>Ne kadar bilirsen bil, söylediklerin karşındakinin anlayabildiği kadardır. (Mevlana)</p>
-                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
-                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
-                </div>
-            </div>
-            <div class="col-md-11">
-                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
-                    <h2>3.Kutucuk</h2>
-                    <p>Bir mum diğer bir mumu tutuşturmakta ışığından bir şey kaybetmez. (Mevlana)</p>
-                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
-                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
-                </div>
-            </div>
-            <div class="col-md-11">
-                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
-                    <h2>4.Kutucuk</h2>
-                    <p>Her şeye doğru demek ahmaklıktır, fakat her şeye yanlış demek de zorbalıktır.</p>
-                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
-                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
-                </div>
-            </div>
-            <div class="col-md-11">
-                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
-                    <h2>5.Kutucuk</h2>
-                    <p>Hayatta muvaffak olmak için üç şey lazımdir: Dikkat, intizam, çalısma. (Mevlana)</p>
-                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
-                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
-                </div>
-            </div>
-            <div class="col-md-11">
-                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
-                    <h2>6.Kutucuk</h2>
-                    <p>Cebi zengin fakat ruhu fakir olan insanın hali çok rezil ! Çünkü o; 'herşeyin fiyatını bilir, değerini değil.' (Mevlana)</p>
-                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
-                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
-                </div>
-            </div>
-            <div class="col-md-11">
-                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
-                    <h2>7.Kutucuk</h2>
-                    <p>"Kula Bela Gelmez, Hak Yazmadıkça; Hak Bela Yazmaz, Kul Azmadıkça". (Mevlana)</p>
-                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
-                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
-                </div>
-            </div>
-            <div class="col-md-11">
-                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
-                    <h2>8.Kutucuk</h2>
-                    <p>Bir kişi Allah'tan başka kimseye ihtiyacı olmadığına inanırsa; Allah da onu başkasına muhtaç etmez. (Mevlana)</p>
-                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
-                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
-                </div>
-            </div>
-            <div class="col-md-11">
-                <div class="shadow-lg p-4 m-4 bg-white rounded-lg">
-                    <h2>9.Kutucuk</h2>
-                    <p>Doğrudan nasihat, kisiyi yaralar. (Mevlana)</p>
-                    <i class="fas fa-chevron-circle-right oklar" onClick="solClk(this)"></i>
-                    <i class="fas fa-chevron-circle-left oklar" onClick="sagClk(this)"></i>
-                </div>
-            </div>
-        </div>
-    </div>
+        function updateItemsClassName(className) {
+            for (const item of items) {
+                item.className = 'col-md-4'
+            }
+        }
 
+        firstButton.addEventListener('click', () => {
+            updateItemsClassName('col-md-12');
+        });
 
+        secondButton.addEventListener('click', () => {
+            updateItemsClassName('col-md-6');
+        });
+    </script>
 
     </div>
-
-
-
 </body>
 
 </html>
