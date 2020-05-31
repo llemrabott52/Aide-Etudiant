@@ -22,21 +22,37 @@
     .oklar {
         float: right;
     }
-    
-    .hidecontent {
-        display: none;
-    }
 </style>
 
 <body>
 
+    <nav class="navbar navbar-expand-md bg-dark fixed-top navbar-dark">
+        <a class="navbar-brand" href="index.html">LOGO</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#kapanacakGrp">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div id="kapanacakGrp" class="collapse navbar-collapse">
+            <ul class="navbar-nav mx-auto" id="menuLU">
+                <li class="nav-item"><a class="nav-link">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link">Galeri</a></li>
+                <li class="nav-item"><a class="nav-link">İletişim</a></li>
+            </ul>
+            <form class="form-inline my-2 my-md-0" action="#">
+                <input class="form-control mx-md-3" placeholder="Aramak için" type="text" required>
+                <button class="btn btn-success px-3 my-2 my-md-0" type="submit">Ara</button>
+            </form>
+        </div>
+    </nav>
+
     <div class="container mt-5 pt-5">
         <div class="row">
             <div class="col-md-12 text-center mb-5">
-
+                <p>Dizilimi değiştirmek için:</p>
                 <i id="firstIcon" class="fas fa-list-alt" style="font-size:36px; padding-left: 10px;"></i>
                 <i id="secondIcon" class="fas fa-th-large" style="font-size:36px; padding-left: 10px;"></i>
-
+                <i id="thirdIcon" class="fas fa-th" style="font-size:36px; padding-left: 10px;"></i>
             </div>
         </div>
 
@@ -121,21 +137,26 @@
         //Element.className = 'col-md-3'
         const firstIcon = document.getElementById('firstIcon');
         const secondIcon = document.getElementById('secondIcon');
+        const thirdIcon = document.getElementById('thirdIcon');
         const myBlog = document.getElementById('myBlog');
         const items = Array.from(myBlog.children);
 
         function updateItemsClassName(className) {
             for (const item of items) {
-                item.className = 'className';
+                item.className = className;
             }
         }
 
         firstIcon.addEventListener('click', () => {
-            updateItemsClassName('col-md-4');
+            updateItemsClassName('col-md-12');
         });
 
         secondIcon.addEventListener('click', () => {
-            updateItemsClassName('col-md-12');
+            updateItemsClassName('col-md-6');
+        });
+
+        thirdIcon.addEventListener('click', () => {
+            updateItemsClassName('col-md-4');
         });
     </script>
 
